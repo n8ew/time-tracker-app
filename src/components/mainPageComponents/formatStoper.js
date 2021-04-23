@@ -20,7 +20,7 @@ export const formatStoper = x => {
    }
 
    if (h === 0 && m === 0) {
-      return addZeroIfNeeded(s)
+      return `00:${addZeroIfNeeded(s)}`
    } else if (h === 0) {
       return `${addZeroIfNeeded(m)}:${addZeroIfNeeded(s)}`
    } else {

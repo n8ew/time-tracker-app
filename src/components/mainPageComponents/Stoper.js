@@ -23,8 +23,8 @@ const Stoper = () => {
    const start = () => {
       dispatch(setStartTime(new Date()))
       dispatch(changeStoperStatus(1))
-      run()
       setStatus(1)
+      run()
       setInterv(setInterval(run,1000))
    }
    const pausing = () => {
@@ -47,6 +47,7 @@ const Stoper = () => {
       pause && dispatch(addPause(new Date().getTime() - pause))
       setPause(null)
       dispatch(changeStoperStatus(3))
+      setCount(0)
    }
 
    return (
@@ -55,12 +56,36 @@ const Stoper = () => {
             <h2>{ formatStoper(count) }</h2>
          </div>
          <div className="buttons">
-            <button className="playBtn" onClick={status===0?start:continuing}><i className="fas fa-play"></i></button>
-            <button className="pauseBtn" onClick={ pausing }><i className="fas fa-pause"></i></button>
-            <button className="stopBtn" onClick={ stop }><i className="fas fa-stop"></i></button>
+            <button
+               className="playBtn"
+               onClick={ status === 0 ? start : continuing }
+               style={ status === 1 ? active : notActive}>
+                  <i className="fas fa-play"></i>
+            </button>
+            <button
+               className="pauseBtn"
+               onClick={ pausing }
+               style={ status===2 ? active : notActive }>
+                  <i className="fas fa-pause"></i>
+            </button>
+            <button
+               className="stopBtn"
+               onClick={ stop }
+               style={ status === 3 ? active : notActive }>
+                  <i className="fas fa-stop"></i>
+            </button>
          </div>
       </div>
    )
+}
+
+const active = {
+   backgroundColor: "#f3f3f3",
+   boxShadow: "inset 2px 2px 4px var(--light-dark-shadow), inset -2px -2px 2px var(--light-light-shadow)"
+}
+const notActive = {
+   backgroundColor: "var(--light-secondary-color)",
+
 }
 
 export default Stoper

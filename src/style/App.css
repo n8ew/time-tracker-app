@@ -161,10 +161,9 @@ body {
 }
 .buttons button,
 .buttons button::before {
-   transition: all .5s ease-in-out;
+   transition: all .2s ease-in-out;
 }
 .playBtn {
-   background-color: var(--light-secondary-color);
    border-bottom-left-radius: 40px;
    border: none;
    border-top: 2px solid #e5e5e5;
@@ -207,4 +206,110 @@ body {
    box-shadow: inset 2px 2px 4px var(--light-dark-shadow),
                inset -2px -2px 2px var(--light-light-shadow);
 }
+/* AddTask */
+#AddTask {
+   margin-top: 3rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 300px;
+}
+#AddTask .contentNotA {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: row;
+   font-size: 24px;
+   background-color: var(--light-secondary-color);
+   position: relative
+}
+#AddTask .contentNotA::after {
+   content: "";
+   position: absolute;
+   box-shadow: none;
+}
+#AddTask .contentNotA,
+#AddTask .contentNotA::after {
+   height: 60px;
+   width: 250px;
+   border-radius: 20px;
+   transition: all .2s ease-in-out;
+}
+#AddTask .contentNotA:hover {
+   background-color: #f3f3f3;
+   color: var(--light-dark-color);
+}
+#AddTask .contentNotA:hover:after {
+   box-shadow: inset 2px 2px 4px var(--light-dark-shadow),
+               inset -1px -1px 2px var(--light-light-shadow)
+}
+#AddTask .contentNotA h3 {
+   font-weight: normal;
+   margin: 0 2rem 0 0;
+}
+#AddTask .contentA {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   font-size: 24px;
+   background-color: var(--light-secondary-color);
+   position: relative;
+   height: 60px;
+   width: 300px;
+   border-radius: 20px;
+}
+.contentA form {
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 
+}
+.contentA input,
+.contentA button {
+   border: none;
+   outline: none;
+}
+.contentA input {
+   width: 210px;
+   height: 60px;
+   padding: 0;
+   padding-left: 30px;
+   background-color: #f3f3f3;
+   color: var(--light-text-color);
+   font-size: 18px;
+   box-shadow: inset 2px 2px 4px var(--light-dark-shadow),
+               inset -1px -1px 2px var(--light-light-shadow);
+   border-top-left-radius: 20px;
+   border-bottom-left-radius: 20px;
+}
+.contentA button,
+.contentA button::after {
+   width: 56px;
+   height: 56px;
+   padding: 0;
+   border-top-right-radius: 20px;
+   border-bottom-right-radius: 20px;
+   transition: all .2s ease-in-out;
+}
+.contentA button {
+   border: 2px solid #f3f3f3;
+   background-color: var(--light-secondary-color);
+   cursor: pointer;
+   position: relative;
+}
+.contentA button::after {
+   content: "";
+   box-shadow: none;
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+.contentA button:hover {
+   background-color: #f3f3f3;
+   border-bottom: none;
+}
+.contentA button:hover::after {
+   box-shadow: inset 0px 2px 4px var(--light-dark-shadow);
+}
