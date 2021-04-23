@@ -1,0 +1,210 @@
+:root {
+   --light-primary-color: #ffffff;
+   --light-secondary-color: #fbfbfb;
+   --light-text-color: #616060;
+   --light-dark-color: #262626;
+   --light-light-shadow: rgba(255,255,255,0.7);
+   --light-dark-shadow: rgba(0,0,0,0.7);
+}
+/* 
+   NAVBAR
+*/
+body {
+   color: var(--light-text-color);
+   background-color: var(--light-secondary-color);
+}
+#Navbar {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#Navbar .content {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 90%;
+   min-height: 10vh;
+}
+/* 
+   INDEX PAGE
+*/
+#IndexPage {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   min-height: 40vh;
+}
+#IndexPage .circle {
+   width: 250px;
+   height: 250px;
+   margin: 5rem 0;
+   background-color: var(--light-primary-color);
+   box-shadow: 5px 5px 10px var(--light-dark-shadow),
+    -3px -3px 4px var(--light-light-shadow);
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.circle h3 {
+   font-size: 40px;
+}
+#IndexPage button {
+   width: 200px;
+   height: 75px;
+   font-size: 32px;
+   letter-spacing: 4px;
+   border-radius: 20px;
+   color: var(--light-text-color);
+   background-color: var(--light-primary-color);
+   border: none;
+   outline: none;
+   cursor: pointer;
+   position: relative;
+}
+#IndexPage button,
+#IndexPage button::after,
+#IndexPage button::before {
+   transition: all .5s ease ;
+}
+#IndexPage button::after,
+#IndexPage button::before {
+   content:  "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 200px;
+   height: 75px;
+   border-radius: 20px;
+}
+#IndexPage button::after {
+   box-shadow: none;
+}
+#IndexPage button::before {
+   box-shadow: 3px 3px 6px var(--light-dark-shadow),
+               -3px -3px 4px var(--light-light-shadow);
+}
+#IndexPage button:hover {
+   background-color: var(--light-secondary-color);
+   color: var(--light-dark-color);
+}
+#IndexPage button:hover:before{
+   box-shadow: none;
+}
+#IndexPage button:hover:after{
+   box-shadow: inset 2px 2px 4px var(--light-dark-shadow),
+               inset -1px -1px 2px var(--light-light-shadow);
+}
+/* 
+   MAIN PAGE
+*/
+#MainPage {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#MainPage .content {
+   width: 90%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+/* DateDisplay */
+#DateDisplay {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+/* Stoper */
+#Stoper {
+   margin-top: 2rem;
+   display: flex;
+   width: 300px;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border-radius: 40px;
+   background-color: var(--light-secondary-color);
+   border: 2px solid #e5e5e5;
+}
+#Stoper .display {
+   width: 100%;
+   border: none;
+   background-color: #f3f3f3;
+   border-top-left-radius: 40px;
+   border-top-right-radius: 40px;
+   box-shadow: inset 2px 2px 4px var(--light-dark-shadow),
+               inset -1px -1px 2px var(--light-light-shadow);
+}
+#Stoper .display h2 {
+   font-size: 42px;
+   margin: 2rem;
+   text-align: center;
+}
+#Stoper .buttons {
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+}
+#Stoper .buttons .playBtn,
+#Stoper .buttons .pauseBtn,
+#Stoper .buttons .stopBtn {
+   height: 80px;
+   outline: none;
+   color: var(--light-text-color);
+   font-size: 24px;
+   cursor: pointer;
+   position: relative;
+}
+.buttons button,
+.buttons button::before {
+   transition: all .5s ease-in-out;
+}
+.playBtn {
+   background-color: var(--light-secondary-color);
+   border-bottom-left-radius: 40px;
+   border: none;
+   border-top: 2px solid #e5e5e5;
+}
+.pauseBtn {
+   background-color: var(--light-secondary-color);
+   border: none;
+   border-top: 2px solid #e5e5e5;
+   border-left: 2px solid #e5e5e5;
+   border-right: 2px solid #e5e5e5;
+}
+.stopBtn {
+   background-color: var(--light-secondary-color);
+   border-bottom-right-radius: 40px;
+   border: none;
+   border-top: 2px solid #e5e5e5;
+   
+}
+.buttons button::before{
+   content: "";
+   width: 100px;
+   height: 80px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   box-shadow: none;
+}
+.playBtn::before {
+   border-bottom-left-radius: 40px;
+}
+.stopBtn::before {
+   border-bottom-right-radius: 40px;
+}
+
+.buttons button:hover {
+   background-color: #f3f3f3;
+   color: var(--light-dark-color);
+}
+.buttons button:hover::before {
+   box-shadow: inset 2px 2px 4px var(--light-dark-shadow),
+               inset -2px -2px 2px var(--light-light-shadow);
+}
+
