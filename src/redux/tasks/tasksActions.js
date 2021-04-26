@@ -5,9 +5,9 @@ export const addTask = task => {
    }
 }
 
-export const aenActiveTask = task => {
+export const endActiveTask = task => {
    return {
-      type: "tasks/endActibeTask",
+      type: "tasks/endActiveTask",
       payload: task
    }
 }

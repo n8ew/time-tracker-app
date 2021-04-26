@@ -1,14 +1,32 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { addTask } from '../../redux/tasks/tasksActions'
+
+const getActiveTask = state => state.tasks.activeTask
+const getStoperStatus = state => state.day.stoperStatus
 
 const AddTask = () => {
 
    const [isActive,setIsActive] = useState(false)
+   const [newTask, setNewTask] = useState({ name: '' })
+
+   const dispatch = useDispatch()
+   const activeTask = useSelector(getActiveTask)
+   const stoperStatus = useSelector(getStoperStatus)
+
+   const handleChange = e => setNewTask({ name: e.target.value })
 
    const handleSubmit = e => {
       e.preventDefault()
-      setIsActive(!isActive)
+      if( newTask.name !== "") {
+         dispatch(addTask(newTask))
+         setIsActive(!isActive)
+      }
    }
 
+   if(activeTask || stoperStatus === 3) {
+      return("")
+   } 
    return (
       <div id="AddTask">
          {!isActive ? (
@@ -19,7 +37,7 @@ const AddTask = () => {
          ) : (
             <div className="contentA">
                <form onSubmit={ handleSubmit }>
-                  <input type="text" placeholder="..."/>
+                  <input type="text" placeholder="..." value={ isActive.name } onChange={ handleChange } />
                   <button type="submit"><i className="fas fa-plus"></i></button>
                </form>
             </div>
