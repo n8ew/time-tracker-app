@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { setStartTime, endDay, changeStoperStatus } from '../../redux/day/dayActions'
 import { addPause } from '../../redux/pauses/pausesActions'
 import { formatStoper } from './formatStoper'
+
+const getMode = state => state.ui.lightMode
 
 const Stoper = () => {
 
@@ -12,7 +14,13 @@ const Stoper = () => {
    // 0=not started, 1=started, 2=paused, 3=stopped
    const [pause,setPause] = useState(null)
 
+   const lightMode = useSelector(getMode)
    const dispatch = useDispatch()
+
+   useEffect(() => {
+      start()
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   },[])
 
    let updatedCount = count
 
@@ -51,27 +59,27 @@ const Stoper = () => {
    }
 
    return (
-      <div id="Stoper">
-         <div className="display">
+      <div id="Stoper" className={lightMode?"LStoper":"DStoper"}>
+         <div className={lightMode?"display LDisplay":"display DDisplay"}>
             <h2>{ formatStoper(count) }</h2>
          </div>
          <div className="buttons">
             <button
-               className="playBtn"
-               onClick={ status === 0 ? start : continuing }
-               style={ status === 1 ? active : notActive}>
+               className={lightMode?"playBtn LStoperBtnPlay":"playBtn DStoperBtnPly"}
+               onClick={ status === 2 ? continuing : null }
+               style={ status === 1 ? (lightMode?LActive:DActive) : (lightMode?LNotActive:DNotActive)}>
                   <i className="fas fa-play"></i>
             </button>
             <button
-               className="pauseBtn"
+               className={lightMode?"pauseBtn LStoperBtnPause":"pauseBtn DStoperBtnPause"}
                onClick={ pausing }
-               style={ status===2 ? active : notActive }>
+               style={ status===2 ? (lightMode?LActive:DActive) : (lightMode?LNotActive:DNotActive) }>
                   <i className="fas fa-pause"></i>
             </button>
             <button
-               className="stopBtn"
+               className={lightMode?"stopBtn LStoperBtnStop":"stopBtn DStoperBtnStop"}
                onClick={ stop }
-               style={ status === 3 ? active : notActive }>
+               style={ status === 3 ? (lightMode?LActive:DActive) : (lightMode?LNotActive:DNotActive) }>
                   <i className="fas fa-stop"></i>
             </button>
          </div>
@@ -79,13 +87,19 @@ const Stoper = () => {
    )
 }
 
-const active = {
+const LActive = {
    backgroundColor: "#f3f3f3",
    boxShadow: "inset 2px 2px 4px var(--light-dark-shadow), inset -2px -2px 2px var(--light-light-shadow)"
 }
-const notActive = {
-   backgroundColor: "var(--light-secondary-color)",
-
+const LNotActive = {
+   backgroundColor: "#fbfbfb"
+}
+const DActive = {
+   backgroundColor: "#161616",
+   boxShadow: "inset 2px 2px 4px rgba(0,0,0,.7), inset -2px -2px 2px #111111"
+}
+const DNotActive = {
+   backgroundColor: "#1f1f1f"
 }
 
 export default Stoper

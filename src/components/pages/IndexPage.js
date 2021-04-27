@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+
+const getMode = state => state.ui.lightMode
 
 const IndexPage = () => {
+
+   const lightMode = useSelector(getMode)
 
    const [time,setTime] = useState(new Date().toLocaleTimeString())
    const history = useHistory()
@@ -20,10 +25,10 @@ const IndexPage = () => {
 
    return (
       <div id="IndexPage">
-         <div className="circle">
+         <div className={lightMode?"Lconvex circle":"Dconvex circle"}>
             <h3>{time}</h3>
          </div>
-         <button onClick={ handleClick }>Start</button>
+         <button className={lightMode?"LconvexBtn":"DconvexBtn"} onClick={ handleClick }>Start</button>
       </div>
    )
 }

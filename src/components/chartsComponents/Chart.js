@@ -8,26 +8,30 @@ const Chart = () => {
 
    const data = useSelector(getData)
 
-   console.log(data)
    // ChartData
 
    const getBreaksTotal = () => {
       let total = 0
       data.pauses.map(i => total+= i)
-      return parseInt(total/1000)
+      return (total/1000).toFixed(2)
    }
    const getTasksTotal = () => {
       let totla = 0
       data.tasks.tasksList.map(i => totla += i.time )
-      return parseInt(totla/1000)
+      return (totla)
    }
 
    // General
 
-   const generalY = parseInt((data.day.dayEnd.getTime() - data.day.dayStart.getTime()) / 1000)
-   const work = parseInt((data.day.dayStoperValue/generalY)*100)
-   const breaks = parseInt((getBreaksTotal() / generalY)*100)
-   const tasks = parseInt((getTasksTotal() / generalY)*100)
+   let generalY = parseInt((data.day.dayEnd.getTime() - data.day.dayStart.getTime()) / 1000)
+   if (generalY < data.day.dayStoperValue) {generalY ++}
+
+   const work = ((data.day.dayStoperValue/generalY)*100).toFixed(2)
+
+   const breaks = ((getBreaksTotal() / generalY)*100).toFixed(2)
+
+   const tasks = ((getTasksTotal() / generalY)*100).toFixed(2)
+
    const generalData = {
       labels: ["Work","Breaks","Tasks"],
       datasets: [{
@@ -44,9 +48,11 @@ const Chart = () => {
       return arr
    }
    const breaksDatasets = () => {
-      let arr = []
-      data.pauses.map(i => arr.push(parseInt(i/1000)))
-      return arr
+      let arr = data.pauses.map(i => {
+         let number = (i/1000/breakesY*100).toFixed(2)
+         return(number)
+      })
+      return (arr)
    }
    const breaksData = {
       labels: breaksLabels(),
@@ -56,8 +62,30 @@ const Chart = () => {
       }]
    }
 
+   // Tasks
+   const tasksY = getTasksTotal()
+   const tasksLabels = () => {
+      let arr = []
+      data.tasks.tasksList.map(i => arr.push(i.name))
+      return arr
+   }
+   const tasksDatasets = () => {
+      let arr = []
+      data.tasks.tasksList.map(i => arr.push((i.time/tasksY*100).toFixed(2)))
+      return arr
+   }
+   const tasksData = {
+      labels: tasksLabels(),
+      datasets: [{
+         label: "Tasks Data",
+         data: tasksDatasets()
+      }]
+   }
+
+
    // ChartOptions
    const options = {
+      responsive: true,
       scales: {
          xAxes: [{
             gridLones: {
@@ -68,23 +96,41 @@ const Chart = () => {
             gridLines: {
                drawOnChartArea: false
             },
+            
             ticks: {
                beginAtZero: true,
-               suggestedMax: 100
+               suggestedMax: 100,
+               stepSize: 20
             }
          }]
       }
    }
 
+   // if(data.charts.status === 0) {
+   //    return (<Bar id="Chart" data={generalData} options={options} />)
+   // }
+   // if(data.charts.status === 1) {
+   //    return (<Bar id="Chart" data={breaksData} options={options} />)
+   // }
+   // if(data.charts.status === 2) {
+   //    return (<Bar id="Chart" data={tasksData} options={options} />)
+   // }
+   let chart ;
    if(data.charts.status === 0) {
-      return (<Bar data={generalData} options={options} />)
+      chart = <Bar data={generalData} options={options} />
    }
    if(data.charts.status === 1) {
-      return (<Bar data={breaksData} options={options} />)
+      chart = <Bar data={breaksData} options={options} />
    }
+   if(data.charts.status === 2) {
+      chart = <Bar data={tasksData} options={options} />
+   }
+
    return (
-      <div>
-         Hi
+      <div className="container">
+         <div id="Chart">
+            { chart }
+         </div>
       </div>
    )
 }

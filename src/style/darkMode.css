@@ -1,0 +1,221 @@
+:root {
+   /* Light */
+   --l-p-bg: #fbfbfb;
+   --l-s-bg: #ffffff;
+   --l-d-bg: #f3f3f3;
+   --l-p-text: #616060;
+   --l-s-text: #262626;
+   --l-l-sh: rgba(255,255,255,.7);
+   --l-d-sh: rgba(0,0,0,.7);
+   --l-stoperBorder: #e5e5e5;
+   /* Dark */
+   --d-p-bg: #1f1f1f;
+   --d-s-bg: #262626;
+   --d-d-bg: #161616;
+   --d-p-text: #ffa800;
+   --d-s-text: #d38e05;
+   --d-l-sh: #565656;
+   --d-d-sh: rgba(0,0,0,.7);
+   --d-dd-sh: #111111;
+   --d-stoperBorder: rgba(0,0,0,.3);
+}
+.dark {
+   color: var(--d-p-text);
+   background-color: var(--d-p-bg);
+}
+.light {
+   color: var(--l-p-text);
+   background-color: var(--l-p-bg);
+}
+/* Light Convex */
+.Lconvex {
+   background-color: var(--l-s-bg);
+   box-shadow: 5px 5px 10px var(--l-d-sh),
+               -3px -3px 4px var(--l-l-sh);
+}
+/* Dark Convex */
+.Dconvex {
+   background-color: var(--d-s-bg);
+   box-shadow: 5px 5px 10px var(--d-d-sh),
+               -3px -3px 4px var(--d-l-sh);
+}
+/* Light Convex Button */
+.LconvexBtn {
+   color: var(--l-p-text);
+   background-color: var(--l-s-bg);
+}
+.LconvexBtn:hover {
+   background-color: var(--l-d-bg);
+   color: var(--l-s-text);
+}
+.LconvexBtn::after {
+   box-shadow: none;
+}
+.LconvexBtn:hover::after {
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -1px -1px 2px var(--l-l-sh);
+}
+.LconvexBtn::before {
+   box-shadow: 3px 3px 6px var(--l-d-sh),
+               -3px -3px 4px var(--l-l-sh);
+}
+.LconvexBtn:hover::before {
+   box-shadow: none;
+}
+/* Dark Convex Button */
+.DconvexBtn {
+   color: var(--d-p-text);
+   background-color: var(--d-s-bg);
+}
+.DconvexBtn:hover {
+   background-color: var(--d-d-bg);
+   color: var(--d-s-text);
+}
+.DconvexBtn::after {
+   box-shadow: none;
+}
+.DconvexBtn:hover::after {
+   box-shadow: inset 2px 2px 4px var(--d-d-sh),
+               inset -1px -1px 2px var(--d-dd-sh);
+}
+.DconvexBtn::before {
+   box-shadow: 3px 3px 6px var(--d-d-sh),
+               -3px -3px 4px var(--d-l-sh);
+}
+.DconvexBtn:hover::before {
+   box-shadow: none;
+}
+/* Light Stoper */
+.LStoper {
+   border: 2px solid var(--l-stoperBorder);
+}
+.LDisplay {
+   background-color: var(--l-d-bg);
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -1px -1px 2px var(--l-l-sh);
+}
+.LStoperBtnPlay,
+.LStoperBtnPause,
+.LStoperBtnStop {
+   color: var(--l-p-text);
+}
+.LStoperBtnPlay {
+   border-top: 2px solid var(--l-stoperBorder)
+}
+.LStoperBtnPause {
+   background-color: var(--l-p-bg);
+   border-top: 2px solid var(--l-stoperBorder);
+   border-left: 2px solid var(--l-stoperBorder);
+   border-right: 2px solid var(--l-stoperBorder);
+}
+.LStoperBtnStop {
+   background-color: var(--l-p-bg);
+   border-top: 2px solid var(--l-stoperBorder);
+}
+.LStoperBtnPlay:hover,
+.LStoperBtnPause:hover,
+.LStoperBtnStop:hover {
+   background-color: var(--l-d-bg);
+   color: var(--l-s-text);
+}
+.LStoperBtnPlay:hover::before,
+.LStoperBtnPause:hover::before,
+.LStoperBtnStop:hover::before {
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -2px -2px 2px var(--l-l-sh);
+}
+/* Dark Stoper */
+.DStoper {
+   border: 2px solid var(--d-stoperBorder);
+}
+.DDisplay {
+   background-color: var(--d-d-bg);
+   box-shadow: inset 2px 2px 4px var(--d-d-sh),
+               inset -1px -1px 2px var(--d-dd-sh);
+}
+.DStoperBtnPly,
+.DStoperBtnPause,
+.DStoperBtnStop {
+   color: var(--d-p-text);
+}
+.DStoperBtnPlay{
+   border-top: 2px solid var(--d-stoperBorder)
+}
+.DStoperBtnPause{
+   background-color: #1f1f1f;
+   border-top: 2px solid var(--d-stoperBorder);
+   border-left: 2px solid var(--d-stoperBorder);
+   border-right: 2px solid var(--d-stoperBorder);
+}
+.DStoperBtnStop{
+   background-color: #1f1f1f;
+   border-top: 2px solid var(--d-stoperBorder);
+}
+.DStoperBtnPlay:hover,
+.DStoperBtnPause:hover,
+.DStoperBtnStop:hover {
+   background-color: var(--d-d-bg);
+   color: var(--d-s-text);
+}
+.DStoperBtnPlay:hover::before,
+.DStoperBtnPause:hover::before,
+.DStoperBtnStop:hover::before {
+   box-shadow: inset 2px 2px 4px var(--d-d-sh),
+               inset -2px -2px 2px var(--d-dd-sh);
+}
+/* Light AddTask */
+.LContentNot {
+   background-color: var(--l-p-bg);
+}
+.LContentNot:hover {
+   border-bottom: 2px solid var(--l-p-text);
+   color: var(--l-s-text);
+}
+.LContentNot:hover::after {
+   box-shadow: inset -1px -1px 2px var(--l-l-sh);
+}
+.LInput{
+   background-color: var(--l-d-bg);
+   color: var(--l-p-text);
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+   inset -1px -1px 2px var(--l-l-sh);
+}
+.LActiveBtn {
+   background-color: var(--l-p-bg);
+   color: var(--l-p-text);
+   box-shadow: 1px 1px 2px var(--l-d-sh)
+}
+.LActiveBtn:hover {
+   background-color: var(--l-d-bg);
+}
+.LActiveBtn:hover::after {
+   box-shadow: inset 0px 2px 4px var(--l-d-sh);
+}
+/* Dark AddTask */
+.DContentNot {
+   background-color: var(--d-p-bg);
+}
+.DContentNot:hover {
+   border-bottom: 2px solid var(--d-p-text);
+   color: var(--d-s-text);
+}
+.DContentNot:hover::after {
+   box-shadow: inset -1px -1px 2px var(--d-l-sh);
+}
+.DInput {
+   background-color: var(--d-d-bg);
+   color: var(--d-p-text);
+   box-shadow: inset 2px 2px 4px var(--d-d-sh),
+   inset -1px -1px 2px var(--d-l-sh);
+}
+.DActiveBtn {
+   background-color: var(--d-s-bg);
+   color: var(--d-p-text);
+   box-shadow: 1px 1px 2px var(--d-d-sh)
+}
+.DActiveBtn:hover {
+   background-color: var(--d-d-bg);
+}
+.DActiveBtn:hover::after {
+   box-shadow: inset 0px 2px 4px var(--d-d-sh);
+}
