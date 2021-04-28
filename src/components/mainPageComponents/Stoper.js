@@ -59,25 +59,25 @@ const Stoper = () => {
    }
 
    return (
-      <div id="Stoper" className={lightMode?"LStoper":"DStoper"}>
-         <div className={lightMode?"display LDisplay":"display DDisplay"}>
+      <div id="Stoper" >
+         <div className="display">
             <h2>{ formatStoper(count) }</h2>
          </div>
          <div className="buttons">
             <button
-               className={lightMode?"playBtn LStoperBtnPlay":"playBtn DStoperBtnPly"}
+               className="playBtn"
                onClick={ status === 2 ? continuing : null }
                style={ status === 1 ? (lightMode?LActive:DActive) : (lightMode?LNotActive:DNotActive)}>
                   <i className="fas fa-play"></i>
             </button>
             <button
-               className={lightMode?"pauseBtn LStoperBtnPause":"pauseBtn DStoperBtnPause"}
+               className="pauseBtn"
                onClick={ pausing }
                style={ status===2 ? (lightMode?LActive:DActive) : (lightMode?LNotActive:DNotActive) }>
                   <i className="fas fa-pause"></i>
             </button>
             <button
-               className={lightMode?"stopBtn LStoperBtnStop":"stopBtn DStoperBtnStop"}
+               className="stopBtn"
                onClick={ stop }
                style={ status === 3 ? (lightMode?LActive:DActive) : (lightMode?LNotActive:DNotActive) }>
                   <i className="fas fa-stop"></i>

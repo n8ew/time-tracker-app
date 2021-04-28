@@ -1,0 +1,252 @@
+:root{
+   --l-p-bg: #fbfbfb;
+   --l-s-bg: #ffffff;
+   --l-d-bg: #f3f3f3;
+   --l-p-text: #616060;
+   --l-s-text: #262626;
+   --l-l-sh: rgba(255,255,255,.7);
+   --l-d-sh: rgba(0,0,0,.7);
+   --l-stoperBorder: #e5e5e5;
+}
+.lightApp {
+   color: var(--l-p-text);
+   background-color: var(--l-p-bg);
+}
+/* 
+   IndexPage 
+*/
+.lIndexPage div {
+   background-color: var(--l-s-bg);
+   box-shadow: 5px 5px 10px var(--l-d-sh),
+               -3px -3px 4px var(--l-l-sh);
+}
+.lIndexPage button {
+   color: var(--l-p-text);
+   background-color: var(--l-s-bg);
+}
+.lIndexPage button:hover {
+   background-color: var(--l-d-bg);
+   color: var(--l-s-text);
+}
+.lIndexPage button:hover::after {
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -1px -1px 2px var(--l-l-sh);
+}
+.lIndexPage button::before {
+   box-shadow: 3px 3px 6px var(--l-d-sh),
+               -3px -3px 4px var(--l-l-sh);
+}
+.lIndexPage button::after,
+.lIndexPage button:hover::before {
+   box-shadow: none;
+}
+/* 
+   MainPage
+*/
+/* Stoper */
+/* Light Stoper */
+.LMainPage #Stoper {
+   border: 2px solid var(--l-stoperBorder);
+}
+.LMainPage #Stoper .display {
+   background-color: var(--l-d-bg);
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -1px -1px 2px var(--l-l-sh);
+}
+.LMainPage #Stoper .playBtn,
+.LMainPage #Stoper .pauseBtn,
+.LMainPage #Stoper .stopBtn{
+   color: var(--l-p-text);
+}
+.LMainPage #Stoper .playBtn {
+   border-top: 2px solid var(--l-stoperBorder)
+}
+.LMainPage #Stoper .pauseBtn {
+   background-color: var(--l-p-bg);
+   border-top: 2px solid var(--l-stoperBorder);
+   border-left: 2px solid var(--l-stoperBorder);
+   border-right: 2px solid var(--l-stoperBorder);
+}
+.LMainPage #Stoper .stopBtn {
+   background-color: var(--l-p-bg);
+   border-top: 2px solid var(--l-stoperBorder);
+}
+.LMainPage #Stoper .playBtn:hover,
+.LMainPage #Stoper .pauseBtn:hover,
+.LMainPage #Stoper .stopBtn:hover {
+   background-color: var(--l-d-bg);
+   color: var(--l-s-text);
+}
+.LMainPage #Stoper .playBtn:hover::before,
+.LMainPage #Stoper .pauseBtn:hover::before,
+.LMainPage #Stoper .stopBtn:hover::before {
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -2px -2px 2px var(--l-l-sh);
+}
+/* AddTask */
+.LMainPage #AddTask .contentNotA {
+   background-color: var(--l-p-bg);
+}
+.LMainPage #AddTask .contentNotA:hover {
+   border-bottom: 2px solid var(--l-p-text);
+   color: var(--l-s-text);
+}
+.LMainPage #AddTask .contentNotA:hover::after {
+   box-shadow: inset -1px -1px 2px var(--l-l-sh);
+}
+.LMainPage #AddTask .contentA input{
+   background-color: var(--l-d-bg);
+   color: var(--l-p-text);
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+   inset -1px -1px 2px var(--l-l-sh);
+}
+.LMainPage #AddTask .contentA button {
+   background-color: var(--l-p-bg);
+   color: var(--l-p-text);
+   box-shadow: 1px 1px 2px var(--l-d-sh)
+}
+.LMainPage #AddTask .contentA button:hover {
+   background-color: var(--l-d-bg);
+}
+.LMainPage #AddTask .contentA button:hover::after {
+   box-shadow: inset 0px 2px 4px var(--l-d-sh);
+}
+/* ActiveTask */
+.LMainPage #ActiveTask {
+   background-color: var(--l-s-bg);
+   box-shadow: 2px 2px 4px var(--l-d-sh),
+               -1px -1px 2px var(--l-l-sh);
+}
+.LMainPage #ActiveTask button {
+   color: var(--l-p-text);
+}
+.LMainPage #ActiveTask button:hover {
+   color: var(--l-s-text);
+}
+/* TasksList */
+.LMainPage #TasksList {
+   border: 2px solid var(--l-stoperBorder);
+   background-color: var(--l-d-bg);
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -1px -1px 2px var(--l-l-sh);
+}
+/* SummaryBtn */
+.LMainPage #SummaryBtn {
+   color: var(--l-p-text);
+   background-color: var(--l-s-bg);
+}
+.LMainPage #SummaryBtn::before {
+   box-shadow: 3px 3px 6px var(--l-d-sh),
+               -3px -3px 4px var(--l-l-sh);
+}
+.LMainPage #SummaryBtn:hover {
+   background-color:var(--l-d-bg);
+   color: var(--l-s-text);
+}
+.LMainPage #SummaryBtn:hover::after {
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -1px -1px 2px var(--l-l-sh);
+}
+.LMainPage #SummaryBtn::after,
+.LMainPage #SummaryBtn:hover::before {
+   box-shadow: none
+}
+/* 
+   SummaryPage
+*/
+.LSummaryPage #DaySummary,
+.LSummaryPage #AdditionalData {
+   background-color: var(--l-d-bg);
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -1px -1px 2px var(--l-l-sh);
+}
+/* ChartBtn */
+.LSummaryPage #ChartBtn {
+   color: var(--l-p-text);
+   background-color: var(--l-s-bg);
+}
+.LSummaryPage #ChartBtn::before {
+   box-shadow: 3px 3px 6px var(--l-d-sh),
+               -3px -3px 4px var(--l-l-sh);
+}
+.LSummaryPage #ChartBtn:hover {
+   background-color:var(--l-d-bg);
+   color: var(--l-s-text);
+}
+.LSummaryPage #ChartBtn:hover::after {
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -1px -1px 2px var(--l-l-sh);
+}
+.LSummaryPage #ChartBtn::after,
+.LSummaryPage #ChartBtn:hover::before {
+   box-shadow: none
+}
+/* 
+   ChartPage
+*/
+/* FiltersBtns */
+.LChartPage #FilterBtns button {
+   color: var(--l-p-text);
+   background-color: var(--l-s-bg);
+}
+.LChartPage #FilterBtns .nActive::before {
+   box-shadow: 3px 3px 6px var(--l-d-sh),
+               -3px -3px 4px var(--l-l-sh);
+}
+.LChartPage #FilterBtns .nActive:hover {
+   background-color:var(--l-d-bg);
+   color: var(--l-s-text);
+}
+.LChartPage #FilterBtns .nActive:hover::after {
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -1px -1px 2px var(--l-l-sh);
+}
+.LChartPage #FilterBtns .nActive::after,
+.LChartPage #FilterBtns .nActive:hover::before {
+   box-shadow: none
+}
+.LChartPage #FilterBtns .active {
+   color: var(--l-s-text);
+   background-color: var(--l-d-bg);
+}
+.LChartPage #FilterBtns .active::before {
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -1px -1px 2px var(--l-l-sh)
+}
+.LChartPage #FilterBtns .active:hover {
+   background-color:var(--l-p-bg);
+   color: var(--l-p-text);
+}
+.LChartPage #FilterBtns .active::after {
+   box-shadow: none
+}
+/* Chart */
+.LChartPage .ChartContainer {
+   background-color: var(--l-d-bg);
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -1px -1px 2px var(--l-l-sh);
+}
+.LChartPage #Chart {
+   background-color: var(--l-d-bg);
+}
+/* BackBtn */
+.LChartPage #BackBtn {
+   background-color: var(--l-s-bg);
+   color: var(--l-p-text);
+}
+.LChartPage #BackBtn:hover {
+   background-color: var(--l-d-bg);
+   color: var(--l-s-text);
+}
+.LChartPage #BackBtn::before {
+   box-shadow: 3px 3px 6px var(--l-d-sh),
+               -3px -3px 4px var(--l-l-sh);
+}
+.LChartPage #BackBtn:hover::after {
+   box-shadow: inset 2px 2px 4px var(--l-d-sh),
+               inset -1px -1px 2px var(--l-l-sh);
+}
+.LChartPage #BackBtn::after,
+.LChartPage #BackBtn:hover::before {
+   box-shadow: none;
+}

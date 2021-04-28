@@ -1,0 +1,68 @@
+@media only screen and (min-width: 550px) {
+   #Navbar .content,
+   #MainPage .content,
+   #SummaryPage .content,
+   #ChartPage .content {
+      width: 70%;
+   }
+   #IndexPage .circle {
+      width: 350px;
+      height: 350px;
+   }
+   #Stoper,
+   #AddTask,
+   #AddTask .contentNotA,
+   #AddTask .contentA,
+   #ActiveTask,
+   #TasksList,
+   #DaySummary, 
+   #AdditionalData,
+   #FilterBtns {
+      width: 390px;
+   }
+   #Stoper .display {
+      height: 200px;
+   }
+   #Stoper .buttons button::before {
+      width: 130px;
+   }
+   #AddTask .contentA input {
+      width: 280px;
+   }
+   #AddTask .contentA button,
+   #AddTask .contentA button::after {
+      width: 80px;
+   }
+   .ChartContainer {
+      width: 500px;
+      height: 250px;
+   }
+}
+@media only screen and (min-width: 1000px) {
+   #Navbar .content,
+   #MainPage .content,
+   #SummaryPage .content,
+   #ChartPage .content {
+      width: 800px;
+   }
+   #DaySummary, 
+   #AdditionalData {
+      width: 600px;
+   }
+   #DaySummary .time,
+   #DaySummary .total,
+   #AdditionalData .pauses,
+   #AdditionalData .tasks {
+      width: 70%;
+   }
+   #DaySummary {
+      margin-bottom: 2rem;
+   }
+   #FilterBtns {
+      margin-top: 0;
+   }
+   .ChartContainer {
+      width: 800px;
+      height: 400px;
+   }
+}

@@ -9,8 +9,10 @@ import ChartsPage from './components/pages/ChartsPage'
 
 import Navbar from './components/ui/Navbar'
 
-import './style/App.css'
 import './style/darkMode.css'
+import './style/lightMode.css'
+import './style/App.css'
+import './style/responsive.css'
 
 const getMode = state => state.ui.lightMode
 
@@ -20,7 +22,7 @@ function App() {
 
   return (
     <Router>
-      <div className={lightMode?"light App":"dark App"}>
+      <div className={lightMode?"lightApp App":"darkApp App"}>
         <Navbar />
         <Switch>
           <Route exact path="/" component={ IndexPage } />

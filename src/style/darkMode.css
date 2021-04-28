@@ -19,203 +19,244 @@
    --d-dd-sh: #111111;
    --d-stoperBorder: rgba(0,0,0,.3);
 }
-.dark {
+.darkApp {
    color: var(--d-p-text);
    background-color: var(--d-p-bg);
 }
-.light {
-   color: var(--l-p-text);
-   background-color: var(--l-p-bg);
-}
-/* Light Convex */
-.Lconvex {
-   background-color: var(--l-s-bg);
-   box-shadow: 5px 5px 10px var(--l-d-sh),
-               -3px -3px 4px var(--l-l-sh);
-}
-/* Dark Convex */
-.Dconvex {
+/*
+   IndexPage
+*/
+.dIndexPage div {
    background-color: var(--d-s-bg);
    box-shadow: 5px 5px 10px var(--d-d-sh),
                -3px -3px 4px var(--d-l-sh);
 }
-/* Light Convex Button */
-.LconvexBtn {
-   color: var(--l-p-text);
-   background-color: var(--l-s-bg);
-}
-.LconvexBtn:hover {
-   background-color: var(--l-d-bg);
-   color: var(--l-s-text);
-}
-.LconvexBtn::after {
-   box-shadow: none;
-}
-.LconvexBtn:hover::after {
-   box-shadow: inset 2px 2px 4px var(--l-d-sh),
-               inset -1px -1px 2px var(--l-l-sh);
-}
-.LconvexBtn::before {
-   box-shadow: 3px 3px 6px var(--l-d-sh),
-               -3px -3px 4px var(--l-l-sh);
-}
-.LconvexBtn:hover::before {
-   box-shadow: none;
-}
-/* Dark Convex Button */
-.DconvexBtn {
+.dIndexPage button {
    color: var(--d-p-text);
    background-color: var(--d-s-bg);
 }
-.DconvexBtn:hover {
+.dIndexPage button:hover {
    background-color: var(--d-d-bg);
    color: var(--d-s-text);
 }
-.DconvexBtn::after {
-   box-shadow: none;
-}
-.DconvexBtn:hover::after {
+.dIndexPage button:hover::after {
    box-shadow: inset 2px 2px 4px var(--d-d-sh),
-               inset -1px -1px 2px var(--d-dd-sh);
+               inset -1px -1px 2px var(--d-l-sh);
 }
-.DconvexBtn::before {
+.dIndexPage button::before {
    box-shadow: 3px 3px 6px var(--d-d-sh),
                -3px -3px 4px var(--d-l-sh);
 }
-.DconvexBtn:hover::before {
+.dIndexPage button::after,
+.dIndexPage button:hover::before {
    box-shadow: none;
 }
-/* Light Stoper */
-.LStoper {
-   border: 2px solid var(--l-stoperBorder);
-}
-.LDisplay {
-   background-color: var(--l-d-bg);
-   box-shadow: inset 2px 2px 4px var(--l-d-sh),
-               inset -1px -1px 2px var(--l-l-sh);
-}
-.LStoperBtnPlay,
-.LStoperBtnPause,
-.LStoperBtnStop {
-   color: var(--l-p-text);
-}
-.LStoperBtnPlay {
-   border-top: 2px solid var(--l-stoperBorder)
-}
-.LStoperBtnPause {
-   background-color: var(--l-p-bg);
-   border-top: 2px solid var(--l-stoperBorder);
-   border-left: 2px solid var(--l-stoperBorder);
-   border-right: 2px solid var(--l-stoperBorder);
-}
-.LStoperBtnStop {
-   background-color: var(--l-p-bg);
-   border-top: 2px solid var(--l-stoperBorder);
-}
-.LStoperBtnPlay:hover,
-.LStoperBtnPause:hover,
-.LStoperBtnStop:hover {
-   background-color: var(--l-d-bg);
-   color: var(--l-s-text);
-}
-.LStoperBtnPlay:hover::before,
-.LStoperBtnPause:hover::before,
-.LStoperBtnStop:hover::before {
-   box-shadow: inset 2px 2px 4px var(--l-d-sh),
-               inset -2px -2px 2px var(--l-l-sh);
-}
-/* Dark Stoper */
-.DStoper {
+/* 
+   MainPage   
+*/
+/* Stoper */
+.DMainPage #Stoper {
    border: 2px solid var(--d-stoperBorder);
 }
-.DDisplay {
+.DMainPage #Stoper .display {
    background-color: var(--d-d-bg);
    box-shadow: inset 2px 2px 4px var(--d-d-sh),
-               inset -1px -1px 2px var(--d-dd-sh);
+               inset -1px -1px 2px var(--d-l-sh);
 }
-.DStoperBtnPly,
-.DStoperBtnPause,
-.DStoperBtnStop {
+.DMainPage #Stoper .playBtn,
+.DMainPage #Stoper .pauseBtn,
+.DMainPage #Stoper .stopBtn{
    color: var(--d-p-text);
 }
-.DStoperBtnPlay{
+.DMainPage #Stoper .playBtn {
    border-top: 2px solid var(--d-stoperBorder)
 }
-.DStoperBtnPause{
-   background-color: #1f1f1f;
+.DMainPage #Stoper .pauseBtn {
+   background-color: var(--d-p-bg);
    border-top: 2px solid var(--d-stoperBorder);
    border-left: 2px solid var(--d-stoperBorder);
    border-right: 2px solid var(--d-stoperBorder);
 }
-.DStoperBtnStop{
-   background-color: #1f1f1f;
+.DMainPage #Stoper .stopBtn {
+   background-color: var(--d-p-bg);
    border-top: 2px solid var(--d-stoperBorder);
 }
-.DStoperBtnPlay:hover,
-.DStoperBtnPause:hover,
-.DStoperBtnStop:hover {
+.DMainPage #Stoper .playBtn:hover,
+.DMainPage #Stoper .pauseBtn:hover,
+.DMainPage #Stoper .stopBtn:hover {
    background-color: var(--d-d-bg);
    color: var(--d-s-text);
 }
-.DStoperBtnPlay:hover::before,
-.DStoperBtnPause:hover::before,
-.DStoperBtnStop:hover::before {
+.DMainPage #Stoper .playBtn:hover::before,
+.DMainPage #Stoper .pauseBtn:hover::before,
+.DMainPage #Stoper .stopBtn:hover::before {
    box-shadow: inset 2px 2px 4px var(--d-d-sh),
-               inset -2px -2px 2px var(--d-dd-sh);
+               inset -2px -2px 2px var(--d-l-sh);
 }
-/* Light AddTask */
-.LContentNot {
-   background-color: var(--l-p-bg);
-}
-.LContentNot:hover {
-   border-bottom: 2px solid var(--l-p-text);
-   color: var(--l-s-text);
-}
-.LContentNot:hover::after {
-   box-shadow: inset -1px -1px 2px var(--l-l-sh);
-}
-.LInput{
-   background-color: var(--l-d-bg);
-   color: var(--l-p-text);
-   box-shadow: inset 2px 2px 4px var(--l-d-sh),
-   inset -1px -1px 2px var(--l-l-sh);
-}
-.LActiveBtn {
-   background-color: var(--l-p-bg);
-   color: var(--l-p-text);
-   box-shadow: 1px 1px 2px var(--l-d-sh)
-}
-.LActiveBtn:hover {
-   background-color: var(--l-d-bg);
-}
-.LActiveBtn:hover::after {
-   box-shadow: inset 0px 2px 4px var(--l-d-sh);
-}
-/* Dark AddTask */
-.DContentNot {
+/* AddTask */
+.DMainPage #AddTask .contentNotA {
    background-color: var(--d-p-bg);
 }
-.DContentNot:hover {
+.DMainPage #AddTask .contentNotA:hover {
    border-bottom: 2px solid var(--d-p-text);
    color: var(--d-s-text);
 }
-.DContentNot:hover::after {
+.DMainPage #AddTask .contentNotA:hover::after {
    box-shadow: inset -1px -1px 2px var(--d-l-sh);
 }
-.DInput {
+.DMainPage #AddTask .contentA input{
    background-color: var(--d-d-bg);
    color: var(--d-p-text);
    box-shadow: inset 2px 2px 4px var(--d-d-sh),
    inset -1px -1px 2px var(--d-l-sh);
 }
-.DActiveBtn {
-   background-color: var(--d-s-bg);
+.DMainPage #AddTask .contentA button {
+   background-color: var(--d-p-bg);
    color: var(--d-p-text);
    box-shadow: 1px 1px 2px var(--d-d-sh)
 }
-.DActiveBtn:hover {
+.DMainPage #AddTask .contentA button:hover {
    background-color: var(--d-d-bg);
 }
-.DActiveBtn:hover::after {
+.DMainPage #AddTask .contentA button:hover::after {
    box-shadow: inset 0px 2px 4px var(--d-d-sh);
+}
+/* ActiveTask */
+.DMainPage #ActiveTask {
+   background-color: var(--d-s-bg);
+   box-shadow: 2px 2px 4px var(--d-d-sh),
+               -1px -1px 2px var(--d-l-sh);
+}
+.DMainPage #ActiveTask button {
+   color: var(--d-p-text);
+}
+.DMainPage #ActiveTask button:hover {
+   color: var(--d-s-text);
+}
+/* TasksList */
+.DMainPage #TasksList {
+   border: 2px solid var(--d-stoperBorder);
+   background-color: var(--d-d-bg);
+   box-shadow: inset 2px 2px 4px var(--d-d-sh),
+               inset -1px -1px 2px var(--d-l-sh);
+}
+/* SummaryBtn */
+.DMainPage #SummaryBtn {
+   color: var(--d-p-text);
+   background-color: var(--d-s-bg);
+}
+.DMainPage #SummaryBtn::before {
+   box-shadow: 3px 3px 6px var(--d-d-sh),
+               -3px -3px 4px var(--d-l-sh);
+}
+.DMainPage #SummaryBtn:hover {
+   background-color:var(--d-d-bg);
+   color: var(--d-s-text);
+}
+.DMainPage #SummaryBtn:hover::after {
+   box-shadow: inset 2px 2px 4px var(--d-d-sh),
+               inset -1px -1px 2px var(--d-l-sh);
+}
+.DMainPage #SummaryBtn::after,
+.DMainPage #SummaryBtn:hover::before {
+   box-shadow: none
+}
+/* 
+   SummaryPage
+*/
+.DSummaryPage #DaySummary,
+.DSummaryPage #AdditionalData {
+   background-color: var(--d-d-bg);
+   box-shadow: inset 2px 2px 4px var(--d-d-sh),
+               inset -1px -1px 2px var(--d-l-sh);
+}
+/* ChartBtn */
+.DSummaryPage #ChartBtn {
+   color: var(--d-p-text);
+   background-color: var(--d-s-bg);
+}
+.DSummaryPage #ChartBtn::before {
+   box-shadow: 3px 3px 6px var(--d-d-sh),
+               -3px -3px 4px var(--d-l-sh);
+}
+.DSummaryPage #ChartBtn:hover {
+   background-color:var(--d-d-bg);
+   color: var(--d-s-text);
+}
+.DSummaryPage #ChartBtn:hover::after {
+   box-shadow: inset 2px 2px 4px var(--d-d-sh),
+               inset -1px -1px 2px var(--d-l-sh);
+}
+.DSummaryPage #ChartBtn::after,
+.DSummaryPage #ChartBtn:hover::before {
+   box-shadow: none
+}
+/* 
+   ChartPage
+*/
+/* FiltersBtns */
+.DChartPage #FilterBtns button {
+   color: var(--d-p-text);
+   background-color: var(--d-s-bg);
+}
+.DChartPage #FilterBtns .nActive::before {
+   box-shadow: 3px 3px 6px var(--d-d-sh),
+               -3px -3px 4px var(--d-l-sh);
+}
+.DChartPage #FilterBtns .nActive:hover {
+   background-color:var(--d-d-bg);
+   color: var(--d-s-text);
+}
+.DChartPage #FilterBtns .nActive:hover::after {
+   box-shadow: inset 2px 2px 4px var(--d-d-sh),
+               inset -1px -1px 2px var(--d-l-sh);
+}
+.DChartPage #FilterBtns .nActive::after,
+.DChartPage #FilterBtns .nActive:hover::before {
+   box-shadow: none
+}
+.DChartPage #FilterBtns .active {
+   color: var(--d-s-text);
+   background-color: var(--d-d-bg);
+}
+.DChartPage #FilterBtns .active::before {
+   box-shadow: inset 2px 2px 4px var(--d-d-sh),
+               inset -1px -1px 2px var(--d-l-sh)
+}
+.DChartPage #FilterBtns .active:hover {
+   background-color:var(--d-p-bg);
+   color: var(--d-p-text);
+}
+.DChartPage #FilterBtns .active::after {
+   box-shadow: none
+}
+/* Chart */
+.DChartPage .ChartContainer {
+   background-color: var(--d-d-bg);
+   box-shadow: inset 2px 2px 4px var(--d-d-sh),
+               inset -1px -1px 2px var(--d-l-sh);
+}
+.DChartPage #Chart {
+   background-color: var(--d-d-bg);
+}
+/* BackBtn */
+.DChartPage #BackBtn {
+   background-color: var(--d-s-bg);
+   color: var(--d-p-text);
+}
+.DChartPage #BackBtn:hover {
+   background-color: var(--d-d-bg);
+   color: var(--d-s-text);
+}
+.DChartPage #BackBtn::before {
+   box-shadow: 3px 3px 6px var(--d-d-sh),
+               -3px -3px 4px var(--d-l-sh);
+}
+.DChartPage #BackBtn:hover::after {
+   box-shadow: inset 2px 2px 4px var(--d-d-sh),
+               inset -1px -1px 2px var(--d-l-sh);
+}
+.DChartPage #BackBtn::after,
+.DChartPage #BackBtn:hover::before {
+   box-shadow: none;
 }

@@ -4,7 +4,6 @@ import { addTask } from '../../redux/tasks/tasksActions'
 
 const getActiveTask = state => state.tasks.activeTask
 const getStoperStatus = state => state.day.stoperStatus
-const getMode = state => state.ui.lightMode
 
 const AddTask = () => {
 
@@ -14,7 +13,6 @@ const AddTask = () => {
    const dispatch = useDispatch()
    const activeTask = useSelector(getActiveTask)
    const stoperStatus = useSelector(getStoperStatus)
-   const lightMode = useSelector(getMode)
 
    const handleChange = e => setNewTask({ name: e.target.value })
 
@@ -32,15 +30,15 @@ const AddTask = () => {
    return (
       <div id="AddTask">
          {!isActive ? (
-            <div className={lightMode?"LContentNot contentNotA":"DContentNot contentNotA"} style={{cursor: "pointer"}} onClick={() => setIsActive(!isActive)}>
+            <div className="contentNotA" style={{cursor: "pointer"}} onClick={() => setIsActive(!isActive)}>
                <h3>Add task</h3>
                <i className="fas fa-plus"></i>
             </div>
          ) : (
             <div className="contentA">
                <form onSubmit={ handleSubmit }>
-                  <input className={lightMode?"LInput":"DInput"} type="text" placeholder="..." value={ isActive.name } onChange={ handleChange } />
-                  <button className={lightMode?"LActiveBtn":"DActiveBtn"} type="submit"><i className="fas fa-plus"></i></button>
+                  <input type="text" placeholder="..." value={ isActive.name } onChange={ handleChange } />
+                  <button type="submit"><i className="fas fa-plus"></i></button>
                </form>
             </div>
          )}

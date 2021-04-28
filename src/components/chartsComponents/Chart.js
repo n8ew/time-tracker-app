@@ -32,11 +32,20 @@ const Chart = () => {
 
    const tasks = ((getTasksTotal() / generalY)*100).toFixed(2)
 
+   const color = () => {
+      if(data.ui.lightMode) {
+         return "#616060"
+      } else {
+         return "#d38e05"
+      }
+   }
+
    const generalData = {
       labels: ["Work","Breaks","Tasks"],
       datasets: [{
          label: "General Data",
-         data: [work,breaks,tasks]
+         data: [work,breaks,tasks],
+         backgroundColor: color
       }]
    }
 
@@ -82,7 +91,6 @@ const Chart = () => {
       }]
    }
 
-
    // ChartOptions
    const options = {
       responsive: true,
@@ -106,15 +114,6 @@ const Chart = () => {
       }
    }
 
-   // if(data.charts.status === 0) {
-   //    return (<Bar id="Chart" data={generalData} options={options} />)
-   // }
-   // if(data.charts.status === 1) {
-   //    return (<Bar id="Chart" data={breaksData} options={options} />)
-   // }
-   // if(data.charts.status === 2) {
-   //    return (<Bar id="Chart" data={tasksData} options={options} />)
-   // }
    let chart ;
    if(data.charts.status === 0) {
       chart = <Bar data={generalData} options={options} />
@@ -127,7 +126,7 @@ const Chart = () => {
    }
 
    return (
-      <div className="container">
+      <div className="ChartContainer">
          <div id="Chart">
             { chart }
          </div>

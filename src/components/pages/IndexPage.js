@@ -24,11 +24,11 @@ const IndexPage = () => {
    }
 
    return (
-      <div id="IndexPage">
-         <div className={lightMode?"Lconvex circle":"Dconvex circle"}>
+      <div id="IndexPage" className={lightMode?"lIndexPage":"dIndexPage"}>
+         <div className="circle">
             <h3>{time}</h3>
          </div>
-         <button className={lightMode?"LconvexBtn":"DconvexBtn"} onClick={ handleClick }>Start</button>
+         <button onClick={ handleClick }>Start</button>
       </div>
    )
 }

@@ -77,7 +77,7 @@ const ActiveTask = () => {
                      <i className="fas fa-play"></i>
                   </button>
                ) : (
-                  <button onClick={ handleStop  }>
+                  <button onClick={ handleStop }>
                      <i className="fas fa-stop"></i>
                   </button>
                )}

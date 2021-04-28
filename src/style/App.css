@@ -105,6 +105,9 @@
    border-radius: 40px;
 }
 #Stoper .display {
+   display: flex;
+   justify-content: center;
+   align-items: center;
    width: 100%;
    border: none;
    border-top-left-radius: 40px;
@@ -174,28 +177,15 @@
    align-items: center;
    flex-direction: row;
    font-size: 24px;
-   /* background-color: var(--light-secondary-color); */
-   position: relative
+   position: relative;
+   width: 300px
 }
-#AddTask .contentNotA::after {
-   content: "";
-   position: absolute;
-   box-shadow: none;
-}
-#AddTask .contentNotA,
-#AddTask .contentNotA::after {
+#AddTask .contentNotA {
    height: 60px;
    width: 300px;
    border-radius: 20px;
    transition: all .2s ease-in-out;
 }
-/* #AddTask .contentNotA:hover {
-   border-bottom: 2px solid var(--light-text-color);
-   color: var(--light-dark-color);
-} */
-/* #AddTask .contentNotA:hover:after {
-   box-shadow: inset -1px -1px 2px var(--light-light-shadow);
-} */
 #AddTask .contentNotA h3 {
    font-weight: normal;
    margin: 0 2rem 0 0;
@@ -242,12 +232,9 @@
    transition: all .2s ease-in-out;
 }
 .contentA button {
-   /* background-color: var(--light-secondary-color); */
    cursor: pointer;
    position: relative;
-   /* box-shadow: 1px 1px 2px var(--light-dark-shadow); */
    font-size: 20px;
-   /* color: var(--light-text-color); */
 }
 .contentA button::after {
    content: "";
@@ -257,24 +244,17 @@
    left: 0;
 }
 .contentA button:hover {
-   /* background-color: #f3f3f3; */
    border-bottom: none;
    box-shadow: none;
 }
-.contentA button:hover::after {
-   /* box-shadow: inset 0px 2px 4px var(--light-dark-shadow); */
-}
 /* ActiveTask */
 #ActiveTask {
-   background-color: var(--light-primary-color);
    width: 300px;
    border-radius: 20px;
    margin-top: 3rem;
    display: flex;
    align-items: center;
    justify-content: center;
-   box-shadow: 2px 2px 4px var(--light-dark-shadow),
-               -1px -1px 2px var(--light-light-shadow);
 }
 #ActiveTask .content {
    display: flex;
@@ -289,7 +269,7 @@
    font-size: 24px;
 }
 #ActiveTask .content h3:first-child {
-   margin-bottom: 1rem;
+   margin-bottom: .5rem;
 }
 #ActiveTask .content h3:last-child {
    max-width: 80%;
@@ -305,24 +285,16 @@
    border: none;
    background-color: inherit;
    font-size: 32px;
-   color: var(--light-text-color);
    cursor: pointer;
-}
-.btn button:hover {
-   color: var(--light-dark-color);
 }
 /* TasksList */
 #TasksList {
    width: 300px;
    margin-top: 3rem;
    border-radius: 20px;
-   border: 2px solid #e5e5e5;
    display: flex;
    flex-direction: column;
    align-items: center;
-   background-color: #f3f3f3;
-   box-shadow: inset 2px 2px 4px var(--light-dark-shadow),
-               inset -1px -1px 2px var(--light-light-shadow);
 }
 #TasksList ul {
    width: 80%;
@@ -356,9 +328,9 @@
 #SummaryBtn {
    margin-top: 2rem;
    font-size: 18px;
-   color: var(--light-text-color);
+   
    cursor: pointer;
-   background-color: var(--light-primary-color);
+   
    border: none;
    position: relative;
 }
@@ -368,25 +340,6 @@
    position: absolute;
    top: 0;
    left: 0;
-}
-#SummaryBtn::before {
-   
-   box-shadow: 3px 3px 6px var(--light-dark-shadow),
-               -3px -3px 4px var(--light-light-shadow);
-}
-#SummaryBtn::after {
-   box-shadow: none
-}
-#SummaryBtn:hover {
-   background-color:#f3f3f3;
-   color: var(--light-dark-color);
-}
-#SummaryBtn:hover::before {
-   box-shadow: none;
-}
-#SummaryBtn:hover::after {
-   box-shadow: inset 2px 2px 4px var(--light-dark-shadow),
-               inset -1px -1px 2px var(--light-light-shadow);
 }
 /* 
    SummaryPage
@@ -403,7 +356,6 @@
    justify-content: center;
    align-items: center;
 }
-
 /* DaySummary */
 #DaySummary, 
 #AdditionalData {
@@ -412,11 +364,8 @@
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   background-color: #f3f3f3;
    margin-top: 1rem;
    border-radius: 40px;
-   box-shadow: inset 2px 2px 4px rgba(0,0,0,.3),
-               inset -1px -1px 2px rgba(0,0,0,.1);
 }
 #DaySummary .time,
 #DaySummary .total {
@@ -472,9 +421,7 @@ p {
 #ChartBtn {
    margin: 2rem 0;
    font-size: 18px;
-   color: var(--light-text-color);
    cursor: pointer;
-   background-color: var(--light-primary-color);
    border: none;
    position: relative;
 }
@@ -484,25 +431,6 @@ p {
    position: absolute;
    top: 0;
    left: 0;
-}
-#ChartBtn::before {
-   
-   box-shadow: 3px 3px 6px var(--light-dark-shadow),
-               -3px -3px 4px var(--light-light-shadow);
-}
-#ChartBtn::after {
-   box-shadow: none
-}
-#ChartBtn:hover {
-   background-color:#f3f3f3;
-   color: var(--light-dark-color);
-}
-#ChartBtn:hover::before {
-   box-shadow: none;
-}
-#ChartBtn:hover::after {
-   box-shadow: inset 2px 2px 4px var(--light-dark-shadow),
-               inset -1px -1px 2px var(--light-light-shadow);
 }
 /* 
    ChartsPage
@@ -541,9 +469,7 @@ p {
 #FilterBtns button {
    margin: 2rem 0;
    font-size: 18px;
-   color: var(--light-text-color);
    cursor: pointer;
-   background-color: var(--light-primary-color);
    border: none;
    position: relative;
 }
@@ -554,27 +480,7 @@ p {
    top: 0;
    left: 0;
 }
-#FilterBtns .nActive::before {
-   box-shadow: 3px 3px 6px var(--light-dark-shadow),
-               -3px -3px 4px var(--light-light-shadow);
-}
-#FilterBtns .nActive::after {
-   box-shadow: none
-}
-#FilterBtns .nActive:hover {
-   background-color:#f3f3f3;
-   color: var(--light-dark-color);
-}
-#FilterBtns .nActive:hover::before {
-   box-shadow: none;
-}
-#FilterBtns .nActive:hover::after {
-   box-shadow: inset 2px 2px 4px var(--light-dark-shadow),
-               inset -1px -1px 2px var(--light-light-shadow);
-}
 #FilterBtns .active {
-   color: var(--light-dark-color);
-   background-color: #f3f3f3;
    cursor:inherit
 }
 #FilterBtns .active::before {
@@ -583,34 +489,18 @@ p {
    top: 0;
    left: 0;
 }
-#FilterBtns .active::before {
-   
-   box-shadow: inset 2px 2px 4px var(--light-dark-shadow),
-               inset -1px -1px 2px var(--light-light-shadow)
-}
-#FilterBtns .active::after {
-   box-shadow: none
-}
-#FilterBtns .active:hover {
-   background-color:var(--light-secondary-color);
-   color: var(--light-text-color);
-}
 /* Chart */
-.container {
+.ChartContainer {
    width: 400px;
    height: 200px;
    display: flex;
    justify-content: center;
    align-items: center;
-   background-color: #f3f3f3;
    border-radius: 10px;
-   box-shadow: inset 2px 2px 4px rgba(0,0,0,.3),
-               inset -1px -1px 2px rgba(0,0,0,.1);
 }
 #Chart {
    width: 90%;
    height: 90%;
-   background-color: #f3f3f3;
 }
 /* BackBtn */
 #BackBtn {
@@ -620,8 +510,6 @@ p {
    border-radius: 20px;
    border: none;
    outline: none;
-   background-color: var(--light-primary-color);
-   color: var(--light-text-color);
    cursor: pointer;
    font-size: 18px;
    position: relative;
@@ -640,24 +528,6 @@ p {
 #BackBtn::after,
 #BackBtn::before {
    transition: all .2s ease-in-out;
-}
-#BackBtn::before {
-   box-shadow: 3px 3px 6px var(--light-dark-shadow),
-               -3px -3px 4px var(--light-light-shadow);
-}
-#BackBtn::after {
-   box-shadow: none;
-}
-#BackBtn:hover::after {
-   box-shadow: inset 2px 2px 4px rgba(0,0,0,.3),
-               inset -1px -1px 2px rgba(0,0,0,.1);
-}
-#BackBtn:hover {
-   background-color: #f3f3f3;
-   color: var(--light-dark-color);
-}
-#BackBtn:hover::before {
-   box-shadow: none;
 }
 #BackBtn i {
    margin-right: .5rem;
