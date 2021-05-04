@@ -9,6 +9,8 @@ import ChartsPage from './components/pages/ChartsPage'
 
 import Navbar from './components/ui/Navbar'
 
+import { AnimatePresence } from 'framer-motion'
+
 import './style/darkMode.css'
 import './style/lightMode.css'
 import './style/App.css'
@@ -24,13 +26,15 @@ function App() {
     <Router>
       <div className={lightMode?"lightApp App":"darkApp App"}>
         <Navbar />
-        <Switch>
-          <Route exact path="/" component={ IndexPage } />
-          <Route path="/main" component={ MainPage } />
-          <Route path="/summary" component={ SummaryPage } />
-          <Route path="/charts" component={ ChartsPage } />
-          <Route component={ ErrorPage } />
-        </Switch>
+        <AnimatePresence>
+          <Switch>
+            <Route exact path="/" component={ IndexPage } />
+            <Route path="/main" component={ MainPage } />
+            <Route path="/summary" component={ SummaryPage } />
+            <Route path="/charts" component={ ChartsPage } />
+            <Route component={ ErrorPage } />
+          </Switch>
+        </AnimatePresence>
       </div>
     </Router>
   );

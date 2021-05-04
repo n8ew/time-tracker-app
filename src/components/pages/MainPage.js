@@ -7,6 +7,8 @@ import TasksList from '../mainPageComponents/TasksList'
 import SummaryBtn from '../mainPageComponents/SummaryBtn'
 
 import { useSelector } from 'react-redux'
+import { motion } from 'framer-motion'
+import { pageTransition, pageVariants } from '../ui/FramerMotion'
 
 const getMode = state => state.ui.lightMode
 
@@ -15,7 +17,15 @@ const MainPage = () => {
    const lightMode = useSelector(getMode)
 
    return (
-      <div id="MainPage" className={lightMode?"LMainPage":"DMainPage"}>
+      <motion.div
+         id="MainPage"
+         className={lightMode?"LMainPage":"DMainPage"}
+         initial="initial"
+         animate="in"
+         exit="out"
+         variants={pageVariants}
+         transition={pageTransition}
+         >
          <div className="content">
             <DateDisplay />
             <Stoper />
@@ -24,7 +34,7 @@ const MainPage = () => {
             <TasksList />
             <SummaryBtn />
          </div>
-      </div>
+      </motion.div>
    )
 }
 

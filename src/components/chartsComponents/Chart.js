@@ -67,7 +67,8 @@ const Chart = () => {
       labels: breaksLabels(),
       datasets: [{
          label: "Breaks Data",
-         data: breaksDatasets()
+         data: breaksDatasets(),
+         backgroundColor: color
       }]
    }
 
@@ -87,7 +88,8 @@ const Chart = () => {
       labels: tasksLabels(),
       datasets: [{
          label: "Tasks Data",
-         data: tasksDatasets()
+         data: tasksDatasets(),
+         backgroundColor: color
       }]
    }
 

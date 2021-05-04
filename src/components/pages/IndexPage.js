@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
+import { motion } from 'framer-motion'
+import { pageTransition, pageVariants } from '../ui/FramerMotion'
+
 const getMode = state => state.ui.lightMode
 
 const IndexPage = () => {
@@ -24,12 +27,20 @@ const IndexPage = () => {
    }
 
    return (
-      <div id="IndexPage" className={lightMode?"lIndexPage":"dIndexPage"}>
+      <motion.div
+         id="IndexPage"
+         className={lightMode?"lIndexPage":"dIndexPage"}
+         initial="initial"
+         animate="in"
+         exit="out"
+         variants={pageVariants}
+         transition={pageTransition}
+         >
          <div className="circle">
             <h3>{time}</h3>
          </div>
          <button onClick={ handleClick }>Start</button>
-      </div>
+      </motion.div>
    )
 }
 
