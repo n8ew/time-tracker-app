@@ -7,6 +7,8 @@ const pausesReducer = (state = initialState, action) => {
          return [
             ...state,action.payload
          ]
+      case "pauses/clearPauses":
+         return []
 
       default:
          return state

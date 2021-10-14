@@ -76,12 +76,12 @@ const Chart = () => {
    const tasksY = getTasksTotal()
    const tasksLabels = () => {
       let arr = []
-      data.tasks.tasksList.map(i => arr.push(i.name))
+      data.tasks.doneTasksList.map(i => arr.push(i.name))
       return arr
    }
    const tasksDatasets = () => {
       let arr = []
-      data.tasks.tasksList.map(i => arr.push((i.time/tasksY*100).toFixed(2)))
+      data.tasks.doneTasksList.map(i => arr.push((i.time/tasksY*100).toFixed(2)))
       return arr
    }
    const tasksData = {

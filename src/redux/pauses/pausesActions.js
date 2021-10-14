@@ -4,3 +4,8 @@ export const addPause = time => {
       payload: time
    }
 }
+export const clearPause = () => {
+   return {
+      type: "pauses/clearPauses"
+   }
+}

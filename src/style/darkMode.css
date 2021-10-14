@@ -140,6 +140,20 @@
    box-shadow: inset 2px 2px 4px var(--d-d-sh),
                inset -1px -1px 2px var(--d-l-sh);
 }
+/* Task */
+.DMainPage #Task .btns button i {
+   color: var(--d-p-text);
+}
+.DMainPage #Task .btns button i:hover {
+   color: var(--d-s-text);
+}
+/* DoneTasksList */
+.DMainPage #DoneTasksList {
+   border: 2px solid var(--d-stoperBorder);
+   background-color: var(--d-d-bg);
+   box-shadow: inset 2px 2px 4px var(--d-d-sh),
+               inset -1px -1px 2px var(--d-l-sh);
+}
 /* SummaryBtn */
 .DMainPage #SummaryBtn {
    color: var(--d-p-text);

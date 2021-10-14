@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { formatStoper } from '../mainPageComponents/formatStoper'
 
 const getPausesData = state => state.pauses
-const getTasksData = state => state.tasks.tasksList
+const getTasksData = state => state.tasks.doneTasksList
 
 const AdditionalData = () => {
 

@@ -21,3 +21,8 @@ export const changeStoperStatus = status => {
       payload: status
    }
 }
+export const clearDay = () => {
+   return {
+      type: "day/clearDay"
+   }
+}

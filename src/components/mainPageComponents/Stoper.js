@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setStartTime, endDay, changeStoperStatus } from '../../redux/day/dayActions'
 import { addPause } from '../../redux/pauses/pausesActions'
@@ -16,11 +16,6 @@ const Stoper = () => {
 
    const lightMode = useSelector(getMode)
    const dispatch = useDispatch()
-
-   useEffect(() => {
-      start()
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-   },[])
 
    let updatedCount = count
 
@@ -66,7 +61,7 @@ const Stoper = () => {
          <div className="buttons">
             <button
                className="playBtn"
-               onClick={ status === 2 ? continuing : null }
+               onClick={ status === 2 ? continuing : ( status === 0 ? start : null) }
                style={ status === 1 ? (lightMode?LActive:DActive) : (lightMode?LNotActive:DNotActive)}>
                   <i className="fas fa-play"></i>
             </button>

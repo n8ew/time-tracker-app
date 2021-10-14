@@ -8,7 +8,7 @@ const TasksList = () => {
 
    const tasksList = useSelector(getTasksList)
 
-   if(tasksList.length <= 0) {
+   if(!tasksList.length) {
       return ""
    } 
    return (

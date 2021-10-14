@@ -26,6 +26,13 @@ const dayReducer = (state = initialState, action) => {
             ...state,
             stoperStatus: action.payload
          }
+      case "day/clearDay":
+         return {
+            dayStart: null,
+            dayEnd: null,
+            dayStoperValue: null,
+            stoperStatus: 0
+         }
 
       default:
          return state
