@@ -68,8 +68,8 @@ const ActiveTask = () => {
    return (
       <div id="ActiveTask">
          <div className="content">
-            <h4>"{ activeTask.name }"</h4>
-            <h4>{ formatStoper(time) }</h4>
+            <h4 className="title">"{ activeTask.name }"</h4>
+            <h4 className="time">{ formatStoper(time) }</h4>
          </div>
          <div className="btn">
             {status === 0 ? (

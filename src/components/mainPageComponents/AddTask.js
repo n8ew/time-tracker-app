@@ -6,7 +6,6 @@ import { v4 as uuidv4 } from 'uuid'
 
 // const getActiveTask = state => state.tasks.activeTask
 const getStoperStatus = state => state.day.stoperStatus
-const getDayStart = state => state.day.dayStart
 
 const AddTask = () => {
 
@@ -16,7 +15,6 @@ const AddTask = () => {
    const dispatch = useDispatch()
    // const activeTask = useSelector(getActiveTask)
    const stoperStatus = useSelector(getStoperStatus)
-   const dayStart = useSelector(getDayStart)
 
    const handleChange = e => setNewTask({ name: e.target.value })
 
@@ -30,9 +28,7 @@ const AddTask = () => {
    }
 
    const handleNotActive = () => {
-      if(dayStart) {
-         setIsActive(!isActive)
-      }
+      setIsActive(!isActive)
    }
 
    if(stoperStatus === 3) {
